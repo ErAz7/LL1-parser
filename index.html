@@ -22,68 +22,68 @@
 	 	<div class="col">
 	 		<div class="header">Grammar</div>
 		 	<textarea  name="grammar" class='grammar' placeholder="Grammar Goes Here...">
-				main_program -> program id ( identifier_list ) ;  declarations  subprogram_declarations  compound_statement .  
-				identifier_list -> id identifier_list_1
-				identifier_list_1 -> , id identifier_list_1|%  
-				declarations -> declarations_1
-				declarations_1 -> var identifier_list : type ; declarations_1|%
-				type -> standard_type  | array [ num .. num ] of type  
-				standard_type ->   integer | real | string  
-				subprogram_declarations -> subprogram_declarations_1
-				subprogram_declarations_1 -> subprogram_declaration ;  subprogram_declarations_1|%
-				subprogram_declaration ->  subprogram_head  declarations  compound_statement  
-				subprogram_head -> function id arguments : standard_type ;  | procedure id arguments ;  
-				arguments -> ( parameter_list )  | %  
-				parameter_list -> identifier_list : type parameter_list_1
-				parameter_list_1 ->  ; identifier_list : type  parameter_list_1| %
-				compound_statement -> begin  optional_statements  end  
-				optional_statements -> statement_list  | %  
-				statement_list -> statement statement_list_1
-				statement_list_1 -> ; statement statement_list_1|%
-				statement -> id statement_1  | compound_statement  | if expression then statement else statement  | while expression do statement  
-				statement_1 -> [ expression ] tail := expression | := expression | ( expression_list ) | %
-				tail -> [ expression ] tail  | %  
-				expression_list -> expression expression_list_1
-				expression_list_1 ->  , expression  expression_list_1|%
-				expression -> simple_expression expression_1
-				expression_1 -> relop simple_expression |%
-				simple_expression -> term  simple_expression_1
-				simple_expression_1 -> addop term  simple_expression_1|%
-				term -> factor term_1  
-				term_1 -> mulop factor term_1|%
-				factor -> id factor_1  | num  | ( expression )  | not factor  
-				factor_1 -> tail  | ( expression_list )
-				addop -> + | -  
-				mulop -> * | /  
-				relop -> <  | >  | =  | <=  | >=  | !=
+main_program -> program id ( identifier_list ) ;  declarations  subprogram_declarations  compound_statement .  
+identifier_list -> id identifier_list_1
+identifier_list_1 -> , id identifier_list_1|%  
+declarations -> declarations_1
+declarations_1 -> var identifier_list : type ; declarations_1|%
+type -> standard_type  | array [ num .. num ] of type  
+standard_type ->   integer | real | string  
+subprogram_declarations -> subprogram_declarations_1
+subprogram_declarations_1 -> subprogram_declaration ;  subprogram_declarations_1|%
+subprogram_declaration ->  subprogram_head  declarations  compound_statement  
+subprogram_head -> function id arguments : standard_type ;  | procedure id arguments ;  
+arguments -> ( parameter_list )  | %  
+parameter_list -> identifier_list : type parameter_list_1
+parameter_list_1 ->  ; identifier_list : type  parameter_list_1| %
+compound_statement -> begin  optional_statements  end  
+optional_statements -> statement_list  | %  
+statement_list -> statement statement_list_1
+statement_list_1 -> ; statement statement_list_1|%
+statement -> id statement_1  | compound_statement  | if expression then statement else statement  | while expression do statement  
+statement_1 -> [ expression ] tail := expression | := expression | ( expression_list ) | %
+tail -> [ expression ] tail  | %  
+expression_list -> expression expression_list_1
+expression_list_1 ->  , expression  expression_list_1|%
+expression -> simple_expression expression_1
+expression_1 -> relop simple_expression |%
+simple_expression -> term  simple_expression_1
+simple_expression_1 -> addop term  simple_expression_1|%
+term -> factor term_1  
+term_1 -> mulop factor term_1|%
+factor -> id factor_1  | num  | ( expression )  | not factor  
+factor_1 -> tail  | ( expression_list )
+addop -> + | -  
+mulop -> * | /  
+relop -> <  | >  | =  | <=  | >=  | !=
 		 	</textarea>
 		</div>
 		<div class="col">
 	 		<div class="header">Code</div>
 		 	<textarea  name="code" class='code' placeholder="Code Goes Here...">
-		 		program Lesson1Program1 (o);
-				var v1,v2 ,v3:integer ;
-				var v4,v5,v6,v7:array[2 ..10] of string;
-				var v8,v9,v10:string;
-				var v11,v12,v13:real;
-				function f1(af,bf,cf:integer;df,ef:string;ff,gf:array[10..19] of integer):real;
-				begin
-				end;
-				procedure p12proc1(g:array[0..20] of string);begin end;
-				function f2:integer;
-				begin
-				end;
-				procedure p2p5prsc12q(f: integer );
-				begin 
-				end;
-				function f3(hf,jf,kf:real):string;begin end ;
-				begin
-				 if(a>b)
-				then
-				c:=b
-				else
-				c:=123
-				end.
+program Lesson1Program1 (o);
+var v1,v2 ,v3:integer ;
+var v4,v5,v6,v7:array[2 ..10] of string;
+var v8,v9,v10:string;
+var v11,v12,v13:real;
+function f1(af,bf,cf:integer;df,ef:string;ff,gf:array[10..19] of integer):real;
+begin
+end;
+procedure p12proc1(g:array[0..20] of string);begin end;
+function f2:integer;
+begin
+end;
+procedure p2p5prsc12q(f: integer );
+begin 
+end;
+function f3(hf,jf,kf:real):string;begin end ;
+begin
+ if(a>b)
+then
+c:=b
+else
+c:=123
+end.
 		 	</textarea>
 		 	<button class="Parse" style="border-bottom:1px solid rgb(200,200,200);">Real Time Parse</button>
 		 	<button class="Parse">Animated Parse</button>
